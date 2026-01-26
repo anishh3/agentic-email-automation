@@ -48,13 +48,12 @@ def assess_risk(state: AgentState):
         RISK_PROMPT.format(email=state.email_text)
     )
 
-    # ✅ ADD THIS BLOCK
     if hasattr(response, "content"):
         response = response.content
 
     print("\n[RAW RISK RESPONSE]")
     print(response)
-    # ✅ END BLOCK
+    K
 
     data = safe_json_loads(response)
     state.risk_level = data["risk_level"]
